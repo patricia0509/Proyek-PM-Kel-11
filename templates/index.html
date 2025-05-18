@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediksi Harga Saham</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='golds.png') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+        <a href="/price">Prediksi Harga</a>
+        <a href="/trend">Prediksi Tren</a>
+      </div>
+      <div class="nav-right">
+        <a href="/" class="nav-right-link">
+          <span class="material-icons">home</span> Home
+        </a>
+      </div>
+    </nav>
+    <h1>Prediksi Harga Saham</h1>
+    <p>Prediksi harga saham dengan data pasar terkini</p>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2><span class="material-icons">trending_up</span> Prediksi Harga Saham</h2>
+      <form action="/predict_price" method="POST">
+        <div class="input-group">
+          <label for="open">Harga Pembukaan (Open)</label>
+          <input type="number" name="open" id="open" step="any" required placeholder="Masukkan harga pembukaan">
+        </div>
+  
+        <div class="input-group">
+          <label for="volume">Volume</label>
+          <input type="number" name="volume" id="volume" step="any" required placeholder="Masukkan volume">
+        </div>
+  
+        <div class="input-group">
+          <label for="sp_close">S&P 500 Close</label>
+          <input type="number" name="sp_close" id="sp_close" step="any" required placeholder="Masukkan S&P 500 close">
+        </div>
+  
+        <div class="input-group">
+          <label for="dj_close">Dow Jones Close</label>
+          <input type="number" name="dj_close" id="dj_close" step="any" required placeholder="Masukkan Dow Jones close">
+        </div>
+  
+        <div class="input-group">
+          <label for="currency">Mata Uang</label>
+          <select name="currency" id="currency">
+            <option value="USD">USD</option>
+            <option value="IDR">IDR</option>
+          </select>
+        </div>
+  
+        <button type="submit">Prediksi Harga</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sistem Prediksi Saham. All rights reserved.</p>
+  </footer>
+</body>
+</html>

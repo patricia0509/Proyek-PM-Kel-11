@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediksi Tren Pasar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='golds.png') }}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a href="/price">Prediksi Harga</a>
+          <a href="/trend">Prediksi Tren</a>
+        </div>
+        <div class="nav-right">
+          <a href="/" class="nav-right-link">
+            <span class="material-icons">home</span> Home
+          </a>
+        </div>
+      </nav>
+      <h1>Prediksi Tren Pasar</h1>
+      <p>Analisis tren pasar berdasarkan data harga dan volume</p>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h2>
+          <span class="material-icons">show_chart</span> Prediksi Tren Pasar
+        </h2>
+        <form action="/predict_trend" method="POST">
+          <div class="input-group">
+            <label for="trend_open">Harga Pembukaan (Open)</label>
+            <input
+              type="number"
+              name="open"
+              id="trend_open"
+              step="any"
+              required
+              placeholder="Masukkan harga pembukaan"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="trend_close">Harga Penutupan (Close)</label>
+            <input
+              type="number"
+              name="close"
+              id="trend_close"
+              step="any"
+              required
+              placeholder="Masukkan harga penutupan"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="trend_volume">Volume</label>
+            <input
+              type="number"
+              name="volume"
+              id="trend_volume"
+              step="any"
+              required
+              placeholder="Masukkan volume"
+            />
+          </div>
+
+          <button type="submit">Prediksi Tren</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Sistem Prediksi Saham. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
